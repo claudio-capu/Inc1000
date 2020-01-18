@@ -1,1 +1,7 @@
 # Inc1000
+
+Versione iniziale (V_1.0): Abbiamo cominciato creando una nuova classe che si estendeva, in questo caso, all superclasse "Thread", nella classe è contenuto un contatore intero di tipo statico. In seguito ci siamo occupati di creare il metodo "run", necessario per poter far funzionare il metodo start nel main, all'interno del metodo run era contenuto un ciclo che si ripeteva mille volte in cui ad ogni iterazione la variabile statica veniva incrementata di uno; abbiamo poi usato l'istruzione "sleep" per dare un tempo di "pausa" al Thread di un secondo. Dopo averlo eseguito (dopo aver creato due oggetti) abbiamo notato che l'output era 0. Questo perchè i due oggetti sovrascrivevano il valore dell'attributo statico senza mai incrementarlo.
+
+Versione due (V_1.1): Classe lasciata invariata, abbiamo però aggiunto al main due istruzioni: t1.join, t2.join, quest'ultime permettono al programma di fermare l'esecuzione del main fino al risolversi dell'istruzione interessata così da cercare di limitare le possibilità di sovrascrittura. Questa volta il risultato era 2000
+
+Versione tre (V_1.2): Abbiamo questa volta lasciato invariato il main ma abbiamo modificato la struttura della classe in modo tale che il metodo run chiamasse, al suo interno, un altro metodo per incrementare il contatore che però era synchronized. Grazie a questa semplice modifica siamo riusciti ad ottenere il risultato dai noi desiderato.
